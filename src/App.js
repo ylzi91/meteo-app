@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.min.css'
+import TodayWeather from './components/TodayWeather';
+import SearchNav from './components/SearchNav';
+import { useState } from 'react';
 
 function App() {
+  const [search, setSearch] = useState('')
+
+  function writeSearch (mySearch){
+    setSearch(mySearch)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <header>
+      <SearchNav search = {search} writeSearch = {writeSearch} />
+    </header>
+    <main className=' bg-info'>
+      <TodayWeather search = {search} />
+      </main>
+    </>
   );
 }
 
