@@ -9,7 +9,7 @@ export default function ListHour( { todayPosFiveDay } ) {
     return (
         <Container fluid className="my-5">
         <Badge className="p-3 opacity-75 border border-2 rounded-5 w-100 mx-auto shadow" bg = 'primary'>
-            <h4 className=" text-light text-start mb-4 border-bottom pb-2">Previsioni per le prossime ore a {}</h4>
+            <h4 className=" text-light text-start mb-4 border-bottom pb-2">Previsioni per le prossime ore</h4>
             <Row>
         {todayPosFiveDay.map((e) => {
             return (
