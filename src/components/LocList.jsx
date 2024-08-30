@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
 
-export default function LocList() {
+export default function LocList( {writeSearch} ) {
 
   const [allCity, setAllCity] = useState([])  
   const apiKey = "367452c59bda6872606aae942e5fe385";
@@ -33,7 +33,7 @@ export default function LocList() {
     <>
       {allCity.map((city) => {
         return (
-          <ListGroup.Item variant="info">
+          <ListGroup.Item variant="info" onClick={() => writeSearch(city.name)}>
             <Container fluid>
               <Row className=" align-items-center">
                 <Col>

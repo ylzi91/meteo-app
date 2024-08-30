@@ -23,7 +23,7 @@ export default function SearchNav( {search, writeSearch} ){
             <Col xs="auto">
               <Form.Control
                 type="text"
-                placeholder="Cerca località"
+                placeholder="Posizione Attuale"
                 className=" my-1"
             
               />
@@ -36,7 +36,7 @@ export default function SearchNav( {search, writeSearch} ){
         <Button className="ms-3" variant="info shadow" onClick={() => handleClick()} type="submit">Vedi localita famose</Button>
       </Navbar>
       <ListGroup className=" w-50 mx-auto">
-       {clicked && <LocList /> /*<ListGroup.Item variant="info"> Località </ListGroup.Item>*/  } 
+       {clicked && <LocList writeSearch = {writeSearch} /> /*<ListGroup.Item variant="info"> Località </ListGroup.Item>*/  } 
         
       </ListGroup>
       </>
