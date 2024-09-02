@@ -36,3 +36,60 @@
     transform: rotate(360deg);
   }
 }
+
+.pointer {
+  cursor: pointer;
+  z-index: 2;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+
+  
+  100% {
+
+    transform: translateX(0);
+    opacity: 0.75;
+  }
+}
+
+/* Applica l'animazione all'elemento */
+.left-entrace {
+  opacity: 0;
+  animation: slideInFromLeft 0.5s ease-in forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(0);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+}
+
+.left-exit {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+.start-58 {
+  left: 58% !important;
+}
+
+.zoom {
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
+.nolastchil:last-child{
+  margin-right: 0;
+}

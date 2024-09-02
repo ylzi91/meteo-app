@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Col, Form, ListGroup, Navbar, Row } from "react-bootstrap";
+import { Button, Col, Fade, Form, ListGroup, Navbar, Row } from "react-bootstrap";
 import LocList from "./LocList";
 
 
@@ -15,7 +15,6 @@ export default function SearchNav( {search, writeSearch} ){
         <Navbar className="bg-primary p-3 mt-3 border border-2 rounded-5 w-50 mx-auto justify-content-center">
         <Form  value={search} onSubmit={(e) => {
             e.preventDefault()
-            console.log(e)
             writeSearch(e.target[0].value)
             
         } }>
@@ -33,10 +32,10 @@ export default function SearchNav( {search, writeSearch} ){
             </Col>
           </Row>
         </Form>
-        <Button className="ms-3" variant="info shadow" onClick={() => handleClick()} type="submit">Vedi localita famose</Button>
+        <Button className="ms-3" variant="info shadow" onClick={() => handleClick()}>Vedi localita famose</Button>
       </Navbar>
-      <ListGroup className=" w-50 mx-auto">
-       {clicked && <LocList writeSearch = {writeSearch} /> /*<ListGroup.Item variant="info"> Località </ListGroup.Item>*/  } 
+      <ListGroup className=" rounded-5 w-50 mx-auto">
+       {clicked && <LocList id = "openList"  writeSearch = {writeSearch} /> /*<ListGroup.Item variant="info"> Località </ListGroup.Item>*/  } 
         
       </ListGroup>
       </>

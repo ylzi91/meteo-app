@@ -20,7 +20,6 @@ export default function LocList( {writeSearch} ) {
         responses.map((response) => response.json())
       );
       setAllCity(myCity)
-      console.log(myCity);
     } catch (error) {
       console.error("Errore nel recupero dei dati:", error);
     }
@@ -33,7 +32,7 @@ export default function LocList( {writeSearch} ) {
     <>
       {allCity.map((city) => {
         return (
-          <ListGroup.Item variant="info" onClick={() => writeSearch(city.name)}>
+          <ListGroup.Item action className="pointer" variant="info" onClick={() => writeSearch(city.name)}>
             <Container fluid>
               <Row className=" align-items-center">
                 <Col>
